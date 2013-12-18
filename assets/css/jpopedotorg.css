@@ -134,6 +134,9 @@ li {
     box-shadow:none;
     margin: 0;
 }
+.container {
+  max-width:inherit;
+}
 .content{
   margin-top:0;
 }
