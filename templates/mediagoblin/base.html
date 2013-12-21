@@ -59,8 +59,7 @@
     {% block mediagoblin_body %}
       {% block mediagoblin_header %}
         <header>
-          {%- include "mediagoblin/bits/logo.html" -%}
-          {% block mediagoblin_header_title %}{% endblock %}
+          <div class="container">
           <div class="header_right">
             {%- if request.user %}
               {% if request.user and 
@@ -104,7 +103,7 @@
                 "{{ request.urlgen('mediagoblin.auth.login') }}"
               {% endif %}
               >
-                <!--{%- trans %}Log in{% endtrans -%}-->
+                {%- trans %}<i class="fa fa-sign-in" title="Log in" alt="Log in"></i>{% endtrans -%}
               </a>
             {%- endif %}
           </div>
@@ -161,6 +160,7 @@
               {% include 'mediagoblin/fragments/header_notifications.html' %}
             </div>
           {% endif %}
+          </div>
         </header>
       {% endblock %}
       <div class="container">
