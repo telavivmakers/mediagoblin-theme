@@ -172,9 +172,10 @@ li {
   background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
   background: linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
 }
-#contactus input[type="text"], #contactus input[type="email"], #contactus input[type="url"], #contactus textarea {
+#contactus input[type="text"], #contactus input[type="email"], #contactus input[type="url"], #contactus textarea, input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea, select {
+  background-color: #EEE8D5;
   width: 98%;
-  background-color: #eee8d5;
+  box-shadow: 0 0 2px #A6A195 inset;
 }
 .bw {
   filter: grayscale(100%);
