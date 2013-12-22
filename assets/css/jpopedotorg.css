@@ -467,10 +467,11 @@ header {
   border-radius:3px;
   border: 1px solid #969386;
 }
-.media_pane img {
+.media_pane img, .media_pane #vjs_video_4 {
   border: 0.3rem solid #373F40;
   border-radius: 6px;
   box-shadow: 0 0 0.3rem #373F40;
+  max-width:100%;
 }
 .form_box, .form_box_xl {
   background: url(/theme_static/images/noise.png) repeat fixed 0 0 rgba(166,161,149,.1);
