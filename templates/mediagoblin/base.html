@@ -53,10 +53,20 @@
     {% block mediagoblin_head %}
     {% endblock mediagoblin_head %}
   </head>
-  <body>
+  <body id="top">
     {% include 'mediagoblin/bits/navbar.html' %}
     {% include 'mediagoblin/bits/body_start.html' %}
     {% block mediagoblin_body %}
+      <div class="container">
+        {% include 'mediagoblin/bits/above_content.html' %}
+        <div class="mediagoblin_content">
+          {% include "mediagoblin/utils/messages.html" %}
+          {% block mediagoblin_content %}
+          {% endblock mediagoblin_content %}
+          {% if csrf_token is defined %}
+            {% template_hook("persona_form") %}
+          {% endif %}
+        </div>
       {% block mediagoblin_header %}
         <header>
           <div class="container">
@@ -163,20 +173,11 @@
           </div>
         </header>
       {% endblock %}
-      <div class="container">
-        {% include 'mediagoblin/bits/above_content.html' %}
-        <div class="mediagoblin_content">
-          {% include "mediagoblin/utils/messages.html" %}
-          {% block mediagoblin_content %}
-          {% endblock mediagoblin_content %}
-          {% if csrf_token is defined %}
-            {% template_hook("persona_form") %}
-          {% endif %}
-        </div>
-        {%- include "mediagoblin/bits/base_footer.html" %}
+        {% include 'mediagoblin/bits/base_footer.html' %}
       </div>
     {%- endblock mediagoblin_body %}
     {% include 'mediagoblin/bits/body_end.html' %}
-
+    <i id="scrolltop" title="back to top" onclick="scrollToTop(&quot;top&quot;)" class="fa fa-arrow-circle-o-up fa-3x"></i>
+    <script>
   </body>
 </html>

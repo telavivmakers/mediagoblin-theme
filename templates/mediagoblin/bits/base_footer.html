@@ -18,11 +18,14 @@
 
 {%- block mediagoblin_footer %}
   <footer>
+    <hr>
+    {% include 'mediagoblin/bits/socialbar.html' %}
+    <div class="row">
     {% trans -%}
-      Powered by <a href="http://mediagoblin.org/" title='Version {{ version }}'>MediaGoblin</a>, a <a href="http://gnu.org/">GNU</a> project.
+      This site happily runs on <a href="http://archlinux.org/" title="Archlinux">ArchLinux</a> and was built with <a href="http://mediagoblin.org/" title='Version {{ version }}'>MediaGoblin</a>
     {%- endtrans %}
     {% trans source_link=app_config['source_link'] -%}
-      Released under the <a href="http://www.fsf.org/licensing/licenses/agpl-3.0.html">AGPL</a>. <a href="{{ source_link }}">Source code</a> available.
+      &#8212; <a href="{{ source_link }}"><i class="fa fa-code"></i></a>.
     {%- endtrans %}
     {% if app_config['show_tos'] %}
       <p class="fine_print">
@@ -31,6 +34,9 @@
         </a>
       </p>
     {% endif %}
+    <br>
+    <i class="fa fa-linux fa-3x"></i>
+    </div>
   </footer>
 <script type="text/javascript"
             src="{{ request.staticdirect('/js/jquery.sidr.min.js', 'theme') }}"></script>
