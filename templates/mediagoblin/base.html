@@ -58,6 +58,7 @@
     {% include 'mediagoblin/bits/body_start.html' %}
     {% block mediagoblin_body %}
       <div class="container">
+      <div class="sixteen columns">
         {% include 'mediagoblin/bits/above_content.html' %}
         <div class="mediagoblin_content">
           {% include "mediagoblin/utils/messages.html" %}
@@ -174,7 +175,7 @@
         </header>
       {% endblock %}
         {% include 'mediagoblin/bits/base_footer.html' %}
-      </div>
+      </div></div>
     {%- endblock mediagoblin_body %}
     {% include 'mediagoblin/bits/body_end.html' %}
     <i id="scrolltop" title="back to top" onclick="scrollToTop(&quot;top&quot;)" class="fa fa-arrow-circle-o-up fa-3x"></i>
