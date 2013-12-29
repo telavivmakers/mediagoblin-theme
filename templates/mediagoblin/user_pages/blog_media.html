@@ -40,7 +40,7 @@
               'mediagoblin.user_pages.user_home',
               user=media.get_uploader.username),
               username=media.get_uploader.username -%}
-      <i class="fa fa-asterisk"></i> Browsing media by <a href="{{user_url}}">{{username}}</a>
+      <i class="fa fa-asterisk"></i> Blog post by <a href="{{user_url}}">{{username}}</a>
       {%- endtrans -%}
     </p>
     {% include "mediagoblin/utils/prev_next.html" %}
@@ -69,15 +69,12 @@
         {% endif %}
       {% endblock %}
     </div>
-    <h2 class="media_title">
-      {{ media.title }}
-    </h2>
-    {% if request.user and
+        {% if request.user and
           (media.uploader == request.user.id or
            request.user.has_privilege('admin')) %}
-      {% set edit_url = request.urlgen('mediagoblin.edit.edit_media',
-                                 user= media.get_uploader.username,
-                                 media_id=media.id) %}
+      {% set edit_url = request.urlgen('mediagoblin.media_types.blog.blogpost.edit', 
+                                 blog_slug=media.media_manager.get_blog_by_blogpost().slug, 
+                                 user=request.user.username, blog_post_slug=media.slug) %}
       <a class="button_action" href="{{ edit_url }}">{% trans %}Edit{% endtrans %}</a>
       {% set delete_url = request.urlgen('mediagoblin.user_pages.media_confirm_delete',
                                  user= media.get_uploader.username,
@@ -85,15 +82,13 @@
       <a class="button_action" href="{{ delete_url }}">{% trans %}Delete{% endtrans %}</a>
 
     {% endif %}
-    {% autoescape False %}
-      <p>{{ media.description_html }}</p>
-    {% endautoescape %}
-    {% if comments and request.user and request.user.has_privilege('commenter') %}
+    </br>
+    </br>
+    {% if comments %}
       {% if app_config['allow_comments'] %}
         <a
           {% if not request.user %}
-          href="{{ request.urlgen('mediagoblin.auth.login') }}?next={{
-                                                request.base_url|urlencode }}"
+            href="{{ request.urlgen('mediagoblin.auth.login') }}"
           {% endif %}
           class="button_action" id="button_addcomment" title="Add a comment">
           {% trans %}Add a comment{% endtrans %}
@@ -110,10 +105,7 @@
             <input type="submit" value="{% trans %}Add this comment{% endtrans %}" class="button_action" />
               {{ csrf_token }}
           </div>
-          <input type="hidden" value="{{ request.urlgen('mediagoblin.user_pages.media_preview_comment') }}" id="previewURL" />
-          <input type="hidden" value="{% trans %}Comment Preview{% endtrans %}" id="previewText"/>
         </form>
-	<div id="comment_preview"></div>
       {% endif %}
       <ul style="list-style:none">
       {% for comment in comments %}
@@ -148,15 +140,6 @@
               {{ comment.content_html }}
             {%- endautoescape %}
           </div>
-          <div>
-            {% if app_config.allow_reporting %}
-                <a href="{{ request.urlgen('mediagoblin.user_pages.media_home.report_comment',
-                            user=media.get_uploader.username,
-                             media=media.slug_or_id,
-                             comment=comment.id) }}">
-                    {% trans %}Report{% endtrans %}</a>
-            {% endif %}
-          </div>
         </li>
       {% endfor %}
       </ul>
@@ -167,7 +150,7 @@
   <div class="media_sidebar">
     <h3>{% trans %}Added{% endtrans %}</h3>
     <p><span title="{{ media.created.strftime("%I:%M%p %Y-%m-%d") }}">
-        {%- trans formatted_time=timesince(media.created) -%}
+        {%- trans formatted_time=timesince(media.created) -%}    
           {{ formatted_time }} ago
         {%- endtrans -%}
     </span></p>
@@ -181,41 +164,9 @@
 
     {% include "mediagoblin/utils/collections.html" %}
 
-    {% if app_config.allow_reporting %}
-      {% include "mediagoblin/utils/report.html" %}
-    {% endif %}
-
     {% include "mediagoblin/utils/license.html" %}
 
     {% include "mediagoblin/utils/exif.html" %}
-
-    {%- if media.attachment_files|count %}
-      <h3>{% trans %}Attachments{% endtrans %}</h3>
-      <ul>
-        {%- for attachment in media.attachment_files %}
-          <li>
-            <a href="{{ request.app.public_store.file_url(attachment.filepath) }}">
-              {{- attachment.name -}}
-            </a>
-          </li>
-        {%- endfor %}
-      </ul>
-    {%- endif %}
-    {%- if app_config['allow_attachments']
-          and request.user
-          and (media.uploader == request.user.id
-               or request.user.has_privilege('admin')) %}
-      {%- if not media.attachment_files|count %}
-        <h3>{% trans %}Attachments{% endtrans %}</h3>
-      {%- endif %}
-      <p>
-        <a href="{{ request.urlgen('mediagoblin.edit.attachments',
-                      user=media.get_uploader.username,
-                      media_id=media.id) }}">
-          {%- trans %}Add attachment{% endtrans -%}
-        </a>
-      </p>
-    {%- endif %}
 
     {% template_hook("media_sideinfo") %}
 
