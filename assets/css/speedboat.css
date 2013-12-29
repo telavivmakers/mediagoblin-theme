@@ -500,7 +500,7 @@ thumb_entry_title {
   -o-transition: all 0.6s ease;
 }
 .media_pane img, .media_pane #vjs_video_4 {
-  border: 0.3rem solid #373F40;
+/*  border: 0.3rem solid #373F40;*/
   border-radius: 6px;
   box-shadow: 0 0 0.3rem #373F40;
   max-width:100%;
@@ -540,11 +540,10 @@ thumb_entry_title {
   }
 }
 .audio-currentTime {
-  bottom:9px !important;
+  bottom:4px !important;
 }
 .audio-control-play-pause {
-  bottom:20px !important;
-  left:8px !important;
+  bottom:15px !important;
 }
 @media only screen and (max-width: 767px) {
   .thumb_gallery .row {
