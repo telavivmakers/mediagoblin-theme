@@ -18,7 +18,7 @@
 
 {% block collections_content -%}
   {% if media.collections %}
-    <h3>{% trans %}Collected in{% endtrans %}</h3>
+    <h3>{% trans %}<i class="fa fa-folder-open fa-fw"></i> Collected in{% endtrans %}</h3>
     <p>
       {%- for collection in media.collections %}
         {%- if not loop.first %}

@@ -14,10 +14,10 @@
 
                 {% set notification_count = get_notification_count(request.user.id) %}
                 {% if notification_count %}
-                  <a href="javascript:;" class="notification-gem button fa fa-exclamation-triangle" title="Notifications">
+                  <a href="javascript:;" class="notification-gem fa fa-warning" title="Notifications">
                   {{ notification_count }}</a>
                 {% endif %}
-                <a href="javascript:;" class="header_dropdown_down"><i class="fa fa-caret-square-o-down fa-fw fa-mid"></i></a>
+                <a href="javascript:;" class="header_dropdown_down"><i class="fa fa-caret-square-o-down fa-fw fa-dark"></i></a>
                 <a href="javascript:;" class="header_dropdown_up"><i class="fa fa-caret-square-o-up fa-fw"></i></a>
               {% elif request.user and not request.user.has_privilege('active') %}
               {# the following link should only appear when verification is needed #}
@@ -49,7 +49,7 @@
                 "{{ request.urlgen('mediagoblin.auth.login') }}"
               {% endif %}
               >
-                {%- trans %}<i class="fa fa-sign-in fa-mid" alt="Log in" title="Log in"></i>{% endtrans -%}
+                {%- trans %}<i class="fa fa-sign-in fa-dark" alt="Log in" title="Log in"></i>{% endtrans -%}
               </a>
             {%- endif %}
           </div>

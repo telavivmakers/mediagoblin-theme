@@ -191,7 +191,7 @@
     {% include "mediagoblin/utils/exif.html" %}
 
     {%- if media.attachment_files|count %}
-      <h3>{% trans %}Attachments{% endtrans %}</h3>
+      <h3>{% trans %}<i class="fa fa-paperclip fa-fw"></i> Attachments{% endtrans %}</h3>
       <ul>
         {%- for attachment in media.attachment_files %}
           <li>
@@ -207,7 +207,7 @@
           and (media.uploader == request.user.id
                or request.user.has_privilege('admin')) %}
       {%- if not media.attachment_files|count %}
-        <h3>{% trans %}Attachments{% endtrans %}</h3>
+        <h3>{% trans %}<i class="fa fa-paperclip fa-fw"></i> Attachments{% endtrans %}</h3>
       {%- endif %}
       <p>
         <a href="{{ request.urlgen('mediagoblin.edit.attachments',

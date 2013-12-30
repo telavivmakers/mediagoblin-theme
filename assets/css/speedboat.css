@@ -42,18 +42,18 @@ p,
 li {
   font-family: "Ubuntu", sans-serif;
 }
-code, pre { font-family: monospaced;}
+code, pre { font-family:Inconsolata,monospace;}
 pre {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 1.6em 0;
-  border: 1px solid #E3EDF3;
+  border: 1px solid transparent;
   width: 100%;
   padding: 10px;
   font-size: 0.9em;
   white-space: pre;
   overflow: auto;
-  background: #F7FAFB;
+  background: transparent;
   border-radius: 3px;
 }
 code, tt {
@@ -118,7 +118,6 @@ li {
 .navbar.navbar-top a {
     line-height: 2em;
 }
-
 .nav > ul {
   margin-bottom: 0;
 }
@@ -162,16 +161,19 @@ li {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #FDF6E3;
   background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #FDF6E3;
   background: linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #FDF6E3;
+  font-family: "Ubuntu",sans-serif;
 }
 .button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #FDF6E3;
   background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #FDF6E3;
   background: linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #FDF6E3;
+  font-family: "Ubuntu",sans-serif;
 }
 .button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
   background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
   background: linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
+  font-family: "Ubuntu",sans-serif;
 }
 .disabled, .disabled:hover, .disabled:active {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.05) 0%, rgba(82, 79, 73, 0.05) 100%) repeat scroll 0 0 #eee8d5;
@@ -182,6 +184,7 @@ li {
   color:#93a1a1;
   text-shadow:none;
   box-shadow: 0 0 5px #969386 inset;
+  font-family: "Ubuntu",sans-serif;
 }
 .header_dropdown .button, .header_dropdown button, .header_dropdown input[type="submit"], .header_dropdown input[type="reset"], .header_dropdown input[type="button"] {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
@@ -192,6 +195,7 @@ li {
   border-color: #999999 #888888 #888888 #999999;
   color: #EEE8D5 !important;
   text-shadow: 0 0 10px #42413b;
+  font-family: "Ubuntu",sans-serif;
 }
 .header_dropdown .button:hover, .header_dropdown button:hover, .header_dropdown input[type="submit"]:hover, .header_dropdown input[type="reset"]:hover, .header_dropdown input[type="button"]:hover {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
@@ -202,6 +206,7 @@ li {
   border-color: #888888 #777777 #777777 #888888;
   color: #EEE8D5 !important;
   text-shadow: 0 0 10px #42413b;
+  font-family: "Ubuntu",sans-serif;
 }
 .header_dropdown .button:active, .header_dropdown button:active, .header_dropdown input[type="submit"]:active, .header_dropdown input[type="reset"]:active, .header_dropdown input[type="button"]:active {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #969386;
@@ -212,11 +217,13 @@ li {
   border-color: #777777 #666666 #666666 #777777;
   color: #EEE8D5 !important;
   text-shadow: 0 0 10px #42413b;
+  font-family: "Ubuntu",sans-serif;
 }
 input[type="password"], input[type="email"], input[type="url"], input[type="text"], textarea, select {
-    background-color: #EEE8D5;
-    box-shadow: 0 0 2px #A6A195 inset;
-    width: 100%;
+  background-color: #EEE8D5;
+  box-shadow: 0 0 2px #A6A195 inset;
+  width: 100%;
+  font-family: "Ubuntu",sans-serif;
 }
 .fa-dark {
   color: #586e75;
@@ -228,7 +235,6 @@ input[type="password"], input[type="email"], input[type="url"], input[type="text
   color: #eee8d5;
 }
 /* scroll to top */
-/*@media only screen and (min-width:768px) {*/
 #scrolltop{
   opacity:0.5;
   position:fixed;
@@ -247,18 +253,6 @@ input[type="password"], input[type="email"], input[type="url"], input[type="text
   display:none;
   z-index:100;
   }
-/*}*/
-/*@media only screen and (max-width:768px) {
- *#scrolltop{
- *  display:none;
- *  }
- *#scrollbottom{
- *  display:none;
- *  }
- *}
-*/
-
-/* hopefully some sort of mobile menu type of thing stuff */
 .collapse {
   display:inherit;
 }
@@ -399,6 +393,14 @@ thumb_entry_title {
 .audio-control-play-pause {
   bottom:15px !important;
 }
+.notification-gem.fa {
+  color:#dc322f;
+  text-shadow:0 0 5px #fdf6e3;
+  transition:all 0.33s linear 0s;
+}
+.notification-gem.fa:hover {
+  color:#851e1c;
+}
 @media only screen and (max-width: 767px) {
   .thumb_gallery .row {
     margin-bottom:0;
@@ -440,8 +442,15 @@ thumb_entry_title {
 .header_dropdown .button {
   text-decoration: none;
 }
+.header_dropdown h1, .header_dropdown h2, .header_dropdown h3, .header_dropdown h4, .header_dropdown h5 {
+  color: #a6a195;
+  font-weight: bold;
+}
 .empty_space {
   background-image: url("../images/empty_dots.png");
+}
+table.admin_panel th, table.admin_side_panel th {
+  color:#969386;
 }
 /* end mediagoblin stuff */
 @media only screen and (min-width: 960px) {
