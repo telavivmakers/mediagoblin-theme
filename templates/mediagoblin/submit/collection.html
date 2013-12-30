@@ -15,14 +15,20 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #}
+{% extends "mediagoblin/base.html" %}
 
-{% block report_content -%}
-  <p>
-    <a href="{{ request.urlgen('mediagoblin.user_pages.media_home.report_media',
-                            user=media.get_uploader.username,
-                             media=media.slug_or_id) }}"
-        class="button" id="button_reportmedia" title="Report media">
-        {% trans %}<i class="fa fa-bullhorn"></i> Report media{% endtrans %}
-    </a>
-  </p>
+{% import "/mediagoblin/utils/wtforms.html" as wtforms_util %}
+
+{% block mediagoblin_content %}
+  <form action="{{ request.urlgen('mediagoblin.submit.collection') }}"
+        method="POST" enctype="multipart/form-data">
+    <div class="form_box_xl">
+      <h1>{% trans %}Add a collection{% endtrans %}</h1>
+      {{ wtforms_util.render_divs(submit_form) }}
+      <div class="form_submit_buttons">
+        {{ csrf_token }}
+        <input type="submit" value="{% trans %}Add{% endtrans %}" class="button" />
+      </div>
+    </div>
+  </form>
 {% endblock %}

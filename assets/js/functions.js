@@ -28,8 +28,3 @@ $(document).ready(function(){
 function scrollToTop(id){
     $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
 };
-$('#responsive-menu-button').sidr({
-  name: 'sidr-main',
-  source: '#navigation',
-  side: 'right'
-});

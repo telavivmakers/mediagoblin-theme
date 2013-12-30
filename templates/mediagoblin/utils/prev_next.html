@@ -24,37 +24,20 @@
   <div class="navigation">
    {# There are no previous entries for the very first media entry #}
     {% if prev_entry_url %}
-      <a class="navigation_button navigation_left button" href="{{ prev_entry_url }}">
-        <span class="fa-stack fa-fw fa-lg">
-          <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
-          <i class="fa fa-chevron-left fa-stack-1x"></i>
-        </span> {% trans %}Newer{% endtrans %}
+      <a class="navigation_button navigation_left button fa fa-angle-left fa-fw fa-lg fa-dark" href="{{ prev_entry_url }}" title="Newer entry">
       </a>
     {% else %}
       {# This is the first entry. display greyed-out 'previous' image #}
-      <p class="navigation_button navigation_left button">
-        <span class="fa-stack fa-fw fa-lg">
-          <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
-          <i class="fa fa-chevron-left fa-stack-1x"></i>
-        </span> {% trans %}Newer{% endtrans %}
+      <p class="navigation_button navigation_left button fa fa-angle-left fa-fw fa-lg fa-mid disabled">
       </p>
     {% endif %}
     {# Likewise, this could be the very last media entry #}
     {% if next_entry_url %}
-      <a class="navigation_button navigation_right button" href="{{ next_entry_url }}">
-        {% trans %}Older{% endtrans %} <span class="fa-stack fa-fw fa-lg">
-          <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
-          <i class="fa fa-chevron-right fa-stack-1x"></i>
-        </span>
-
+      <a class="navigation_button navigation_right button fa fa-angle-right fa-fw fa-lg fa-dark" href="{{ next_entry_url }}" title="Older entry">
       </a>
     {% else %}
       {# This is the last entry. display greyed-out 'next' image #}
-      <p class="navigation_button navigation_right button">
-        {% trans %}Older{% endtrans %} <span class="fa-stack fa-fw fa-lg">
-          <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
-          <i class="fa fa-chevron-right fa-stack-1x"></i>
-        </span>
+      <p class="navigation_button navigation_right button fa fa-angle-right fa-fw fa-lg fa-mid disabled">
       </p>
     {% endif %}
   </div>

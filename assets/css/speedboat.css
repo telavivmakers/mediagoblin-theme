@@ -173,72 +173,49 @@ li {
   background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
   background: linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #FDF6E3;
 }
-#contactus input[type="text"], #contactus input[type="email"], #contactus input[type="url"], #contactus textarea, input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea, select {
-  background-color: #EEE8D5;
-  width: 98%;
-  box-shadow: 0 0 2px #A6A195 inset;
+.disabled, .disabled:hover, .disabled:active {
+  background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.05) 0%, rgba(82, 79, 73, 0.05) 100%) repeat scroll 0 0 #eee8d5;
+  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.05) 0%, rgba(82, 79, 73, 0.05) 100%) repeat scroll 0 0 #eee8d5;
+  background: linear-gradient(center top , rgba(253, 246, 227, 0.05) 0%, rgba(82, 79, 73, 0.05) 100%) repeat scroll 0 0 #eee8d5;
+  border-color: #cccccc #aaaaaa #aaaaaa #cccccc;
+  cursor:default;
+  color:#93a1a1;
+  text-shadow:none;
 }
-.bw {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%); 
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%); 
-  -o-filter: grayscale(100%);
-  filter: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale');
-  filter: gray;
-  -webkit-filter: grayscale(1);
+.header_dropdown .button, .header_dropdown button, .header_dropdown input[type="submit"], .header_dropdown input[type="reset"], .header_dropdown input[type="button"] {
+  background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
+  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
+  background: linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999999 #888888 #888888 #999999;
+  color: #EEE8D5 !important;
+  text-shadow: 0 0 10px #42413b;
 }
-.bw:hover {
-  filter: grayscale(0%);
-  -webkit-filter: grayscale(0%); 
-  -moz-filter: grayscale(0%);
-  -ms-filter: grayscale(0%); 
-  -o-filter: grayscale(0%);
-  filter: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale');  
-  filter: none;
-  -webkit-filter: grayscale(0);
-  transition: all .6s ease;
+.header_dropdown .button:hover, .header_dropdown button:hover, .header_dropdown input[type="submit"]:hover, .header_dropdown input[type="reset"]:hover, .header_dropdown input[type="button"]:hover {
+  background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
+  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
+  background: linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #888888 #777777 #777777 #888888;
+  color: #EEE8D5 !important;
+  text-shadow: 0 0 10px #42413b;
 }
-.seeks {
-  text-align:center;
-}
-.sitemenu {
-  text-align:center;
-}
-.sitemenu ul li{
-  line-height:1.333333em;
-}
-.seeks input[type="text"], .seeks input[type="password"], .seeks input[type="email"], .seeks input[type="url"], .seeks textarea, .seeks select {
-  width: 90%;
-  background-color:#eee8d5;
-  margin-left:auto;
-  margin-right:auto;
-}
-.pubkey pre, .pubkey code {
-  font-size: 0.5em;
-  line-height: 1em;
-}
-.radarlist a {
-  text-decoration:none;
-  line-height:1.5em;
-}
-.socialicons {
-  background: none repeat scroll 0 0 #EEE8D5;
-  border-radius: 16px;
-  box-shadow: none;
-  padding: 8px;
-  margin:4px;
-  border:1px solid #93a1a1;
-  width:16px;
-  height:16px;
-}
-.button.sitelinks.first {
-  margin-left:3em;
-}
-.button.sitelinks {
-  margin-left:0.3em;
+.header_dropdown .button:active, .header_dropdown button:active, .header_dropdown input[type="submit"]:active, .header_dropdown input[type="reset"]:active, .header_dropdown input[type="button"]:active {
+  background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #969386;
+  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #969386;
+  background: linear-gradient(center top , rgba(253, 246, 227, 0.4) 0%, rgba(82, 79, 73, 0.4) 100%) repeat scroll 0 0 #969386;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #777777 #666666 #666666 #777777h;
+  tcolor: #tEEE8D5 !pimportant;
+  :text-/shadow: /0 l0 o10px #c42413b;
 }
 .fa-dark {
+  color: #586e75;
+}
+.fa-mid {
   color: #93a1a1;
 }
 .fa-light {
@@ -331,6 +308,9 @@ header {
 .media_thumbnail {
   width:inherit;
 }
+.media_thumbnail a {
+  color:#333333;
+}
 .media_thumbnail img {
   background-color: #FDF6E3;
   border: 1px solid #A6A195;
@@ -362,7 +342,6 @@ thumb_entry_title {
   -o-transition: all 0.6s ease;
 }
 .media_pane img, .media_pane #vjs_video_4 {
-/*  border: 0.3rem solid #373F40;*/
   border-radius: 6px;
   box-shadow: 0 0 0.3rem #373F40;
   max-width:100%;
@@ -394,6 +373,11 @@ thumb_entry_title {
 }
 .navigation_button {
   width: 125px;
+}
+.comment_active {
+  background: none repeat scroll 0 0 #969386;
+  box-shadow: 0 0 15px 15px #969386;
+  color: #EEE8D5;
 }
 @media screen and (max-width: 940px) {
   .navigation_button {
@@ -436,6 +420,12 @@ thumb_entry_title {
   border-radius:6px;
   box-shadow:0 0 5px #42413b inset;
   color:#000000;
+}
+.header_dropdown a {
+  text-decoration: underline;
+}
+.header_dropdown .button {
+  text-decoration: none;
 }
 .empty_space {
   background-image: url("../images/empty_dots.png");

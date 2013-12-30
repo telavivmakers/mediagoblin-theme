@@ -78,12 +78,13 @@
       {% set edit_url = request.urlgen('mediagoblin.edit.edit_media',
                                  user= media.get_uploader.username,
                                  media_id=media.id) %}
-      <a class="button" href="{{ edit_url }}">{% trans %}Edit{% endtrans %}</a>
+      <div class="row">
+        <a class="button" href="{{ edit_url }}">{% trans %}<i class="fa fa-edit"></i> Edit{% endtrans %}</a>
       {% set delete_url = request.urlgen('mediagoblin.user_pages.media_confirm_delete',
                                  user= media.get_uploader.username,
                                  media_id=media.id) %}
-      <a class="button" href="{{ delete_url }}">{% trans %}Delete{% endtrans %}</a>
-
+        <a class="button" href="{{ delete_url }}">{% trans %}<i class="fa fa-trash-o"></i> Delete{% endtrans %}</a>
+      </div>
     {% endif %}
     {% autoescape False %}
       <p>{{ media.description_html }}</p>
