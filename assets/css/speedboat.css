@@ -316,6 +316,7 @@ header {
 }
 .media_thumbnail a {
   color:#333333;
+  white-space:normal;
 }
 .media_thumbnail img {
   background-color: #FDF6E3;
@@ -334,6 +335,7 @@ header {
 a.thumb_entry_title {
   padding: 0 3px 1px 3px;
   font-size: 0.6667rem;
+  line-height:1em;
 }
 thumb_entry_title {
   position: absolute;

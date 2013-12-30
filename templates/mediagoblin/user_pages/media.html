@@ -166,7 +166,7 @@
     {% endif %}
   </div>
   <div class="media_sidebar">
-    <h3>{% trans %}Added{% endtrans %}</h3>
+    <h3>{% trans %}<i class="fa fa-calendar fa-fw"></i> Added{% endtrans %}</h3>
     <p><span title="{{ media.created.strftime("%I:%M%p %Y-%m-%d") }}">
         {%- trans formatted_time=timesince(media.created) -%}
           {{ formatted_time }} ago

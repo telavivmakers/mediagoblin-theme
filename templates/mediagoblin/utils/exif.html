@@ -29,7 +29,7 @@
         and media.media_data
         and media.media_data.exif_all is defined
         and media.media_data.exif_all %}
-    <h3>Camera Information</h3>
+    <h3><i class="fa fa-camera fa-fw"></i> Camera Information</h3>
     <table id="exif_camera_information">
       <tbody>
       {% for label, value in media.exif_display_data_short().iteritems() %}
@@ -40,9 +40,9 @@
       {% endfor %}
       </tbody>
     </table>
-    <h3 id="exif_additional_info_button" class="button">
-      Additional Information
-    </h3>
+    <a id="exif_additional_info_button" class="button">
+      <i class="fa fa-info-circle fa-fw"></i> Additional Information
+    </a>
     <div id="exif_additional_info">
     <table class="exif_info">
       {% for key, tag in media.exif_display_iter() %}
