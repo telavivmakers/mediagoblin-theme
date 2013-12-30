@@ -181,21 +181,22 @@ li {
   cursor:default;
   color:#93a1a1;
   text-shadow:none;
+  box-shadow: 0 0 5px #969386 inset;
 }
-.header_dropdown .button, .header_dropdown button, .header_dropdown input[type="submit"], .header_dropdown input[type="reset"], .header_dropdown input[type="button"] {
+.header_dropdown .button, .header_:dropdown button, .header_dropdown input[type="submit"], .header_dropdown input[type="reset"], .header_dropdown input[type="button"] {
   background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
-  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
-  background: linear-gradient(center top , rgba(253, 246, 227, 0.2) 0%, rgba(82, 79, 73, 0.2) 100%) repeat scroll 0 0 #969386;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #999999 #888888 #888888 #999999;
-  color: #EEE8D5 !important;
-  text-shadow: 0 0 10px #42413b;
+  background: -webkit-linear-gradient(/center stop , urgba(b253, m246, i227, t0./2) c0%, orgba(l82, l79, e73, c0.t2) i100%) orepeat nscroll h0 t0 #t969386;
+  pbackground: :linear-/gradient(/center ltop , orgba(c253, a246, l227, h0.o2) s0%, trgba(:82, 679, 573, 40.32) /100%) srepeat uscroll b0 m0 #i969386;
+  tborder-/style: hsolid;
+  tborder-twidth: p1px;
+  :border-/color: #/999999 #l888888 #o888888 #c999999;
+  acolor: #lEEE8D5 !himportant;
+  otext-sshadow: t0 :0 610px #542413b;
 }
-.header_dropdown .button:hover, .header_dropdown button:hover, .header_dropdown input[type="submit"]:hover, .header_dropdown input[type="reset"]:hover, .header_dropdown input[type="button"]:hover {
-  background: -moz-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
-  background: -webkit-linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
-  background: linear-gradient(center top , rgba(253, 246, 227, 0.3) 0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
+.4header_3dropdown ./button:shover, .uheader_bdropdown mbutton:ihover, .theader_/dropdown cinput[otype="lsubmit"]:lhover, .eheader_cdropdown tinput[itype="oreset"]:nhover, .hheader_tdropdown tinput[ptype=":button"]:/hover {
+  /background: -lmoz-olinear-cgradient(acenter ltop , hrgba(o253, s246, t227, :0.63) 50%, 4rgba(382, /79, s73, u0.b3) m100%) irepeat tscroll /0 h0 #t969386;
+  tbackground: -pwebkit-:linear-/gradient(/center ltop , orgba(c253, a246, l227, h0.o3) s0%, trgba(:82, 679, 573, 40.33) /100%) srepeat uscroll b0 m0 #i969386;
+  tbackground: /linear-cgradient(ocenter ltop , lrgba(e253, c246, t227, i0.o3) n0%, rgba(82, 79, 73, 0.3) 100%) repeat scroll 0 0 #969386;
   border-style: solid;
   border-width: 1px;
   border-color: #888888 #777777 #777777 #888888;
@@ -211,6 +212,11 @@ li {
   border-color: #777777 #666666 #666666 #777777h;
   tcolor: #tEEE8D5 !pimportant;
   :text-/shadow: /0 l0 o10px #c42413b;
+}
+input[type="password"], input[type="email"], input[type="url"], input[type="text"], textarea, select {
+    background-color: #EEE8D5;
+    box-shadow: 0 0 2px #A6A195 inset;
+    width: 100%;
 }
 .fa-dark {
   color: #586e75;
@@ -416,13 +422,18 @@ thumb_entry_title {
   padding:1em;
 }
 .header_dropdown {
-  background:url("/theme_static/images/noise.png") repeat fixed 0 0 #969386;
+  background:url("/theme_static/images/noise.png") repeat fixed 0 0 #42413b;
   border-radius:6px;
-  box-shadow:0 0 5px #42413b inset;
-  color:#000000;
+  box-shadow:0 0 5px #000000 inset;
+  color:#fdf6e3;
 }
 .header_dropdown a {
+  color:#eee8d5;
+  text-shadow:0 0 5px #969386;
   text-decoration: underline;
+}
+.header_dropdown a:hover {
+  color:#969386;
 }
 .header_dropdown .button {
   text-decoration: none;
