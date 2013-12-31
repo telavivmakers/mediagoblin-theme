@@ -82,7 +82,7 @@
              user_url=request.urlgen(
                         'mediagoblin.moderation.users_detail',
                         user=report.reported_user.username) %}
-        ❖ Reported media by <a href="{{ user_url }}">{{ user_name }}</a>
+        <i class="fa fa-asterisk"></i> Reported media by <a href="{{ user_url }}">{{ user_name }}</a>
     {% endtrans %}
     </p>
     <div class=clear></div>

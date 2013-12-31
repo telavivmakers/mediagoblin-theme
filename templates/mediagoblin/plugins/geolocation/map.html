@@ -21,7 +21,7 @@
         and media.media_data.gps_latitude
         and media.media_data.gps_longitude is defined
         and media.media_data.gps_longitude %}
-    <h3>{% trans %}<i class="fa fa-map-marker fa-fw"></i> Location{% endtrans %}</h3>
+    <h3>{% trans %}<i class="fa fa-location-arrow fa-fw"></i> Location{% endtrans %}</h3>
     <div>
       {%- set lon = media.media_data.gps_longitude %}
       {%- set lat = media.media_data.gps_latitude %}
