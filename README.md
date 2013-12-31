@@ -7,6 +7,8 @@ This theme uses a few bits of [Skeleton](http://www.getskeleton.com) and the [Fo
 
 The name _Sandy Seventies Speedboat_ is thanks to @[aether](https://blahblahblah.indyshop.org/aether)'s notice here: [Link](https://blahblahblah.indyshop.org/aether/comment/-Z5gahTpRbGVpTlYizQZkA)
 
+[![screenshot](https://media.jpope.org/mgoblin_media/media_entries/503/snapshot137.medium.png)](https://media.jpope.org/u/jpope/m/mediagoblin-theme-sandy-seventies-speedboat/)
+
 Usage
 =====
 
