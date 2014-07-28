@@ -55,7 +55,7 @@
           </div>
           <div class="clear"></div>
           {% if request.user and request.user.has_privilege('active') %}
-            <div class="header_dropdown">
+            <div id="header_dropdown">
               <p>
                 <span class="dropdown_title">
                   {% trans user_url=request.urlgen('mediagoblin.user_pages.user_home',
