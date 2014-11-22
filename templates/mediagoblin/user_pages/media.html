@@ -30,12 +30,12 @@
   <script type="text/javascript"
           src="{{ request.staticdirect('/js/keyboard_navigation.js') }}"></script>
 
+<!--  {% template_hook("location_head") %}-->
   {% template_hook("media_head") %}
 {% endblock mediagoblin_head %}
-
 {% block mediagoblin_content %}
   <div class="row foot">
-    <p class="context">
+    <p class="eleven columns context">
       {%- trans user_url=request.urlgen(
               'mediagoblin.user_pages.user_home',
               user=media.get_uploader.username),
@@ -43,9 +43,11 @@
       <i class="fa fa-asterisk"></i> Browsing media by <a href="{{user_url}}">{{username}}</a>
       {%- endtrans -%}
     </p>
-    {% include "mediagoblin/utils/prev_next.html" %}
+    <div class="five columns">
+      {% include "mediagoblin/utils/prev_next.html" %}
+    </div>
   </div>
-  <div class="media_pane">
+  <div class="media_pane eleven columns">
     <div class="media_image_container">
       {% block mediagoblin_media %}
         {% set display_media = request.app.public_store.file_url(
@@ -69,6 +71,7 @@
         {% endif %}
       {% endblock %}
     </div>
+    <div class="row head foot"
     <h2 class="media_title">
       {{ media.title }}
     </h2>
@@ -89,6 +92,7 @@
     {% autoescape False %}
       <p>{{ media.description_html }}</p>
     {% endautoescape %}
+    </div>
     {% if comments and request.user and request.user.has_privilege('commenter') %}
       {% if app_config['allow_comments'] %}
         <a

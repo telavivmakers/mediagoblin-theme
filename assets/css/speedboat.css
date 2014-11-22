@@ -348,7 +348,6 @@ thumb_entry_title {
   border-radius: 6px;
   box-shadow: 0 0 0.3rem #373F40;
   max-width:100%;
-  width:100% !important;
 }
 .form_box, .form_box_xl {
   background: url(/theme_static/images/noise.png) repeat fixed 0 0 rgba(166,161,149,.1);
