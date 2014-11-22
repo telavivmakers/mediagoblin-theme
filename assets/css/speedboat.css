@@ -252,10 +252,10 @@ input[type="password"], input[type="email"], input[type="url"], input[type="text
 .column.omega, .columns.omega, .omega {
   margin-right: 0;
 }
-.column.heaven, .columns.heaven, .heaven {
+.column.head, .columns.head, .head {
   margin-top: 0;
 }
-.column.hell, .columns.hell, .hell ul, .hell {
+.column.foot, .columns.foot, .foot ul, .foot {
   margin-bottom: 0;
 }
 /* scroll to top */

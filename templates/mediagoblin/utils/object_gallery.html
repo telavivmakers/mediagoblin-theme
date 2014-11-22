@@ -21,7 +21,7 @@
 {% macro media_grid(request, media_entries, col_number=5) %}
   <div class="thumb_gallery">
     {% for row in media_entries|batch(col_number) %}
-      <div class="row hell">
+      <div class="row foot">
         {% for entry in row %}
           {% set entry_url = entry.url_for_self(request.urlgen) %}
           <div class="three columns center">
