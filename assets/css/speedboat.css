@@ -1,15 +1,12 @@
-html {
-  font-size:1.1rem;
-}
-body {
-  padding-top: 4em;
-  padding-bottom: 5em;
+html, body {
+  padding-top: 2em;
   background:url("/theme_static/images/noise.png") repeat scroll 0 0px, linear-gradient(to right, rgba(166, 161, 149, 0.9), rgba(166, 161, 149, 0.3) 8%, rgba(166, 161, 149, 0) 15%, rgba(166, 161, 149, 0) 85%, rgba(166, 161, 149, 0.3) 92%, rgba(166, 161, 149, 0.9) 100%) repeat scroll 0 0 #FDF6E3;
   color: #586e75;
   font-size:1.1em;
 }
 h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", sans-serif;
+  color: #586e75;
 }
 h1 {
   font-size:1.6em;
@@ -29,6 +26,7 @@ h5 {
 a {
   text-shadow:0 0 10px #969386;
   text-decoration:none;
+  color: #586e75;
 }
 a:hover {
   color: #000;
@@ -40,7 +38,7 @@ p, li {
 strong {
   color:inherit;
 }
-code, pre { 
+code, pre {
   font-family:Inconsolata,monospace;
 }
 pre {
@@ -297,6 +295,13 @@ header {
   max-width:inherit;
   width:inherit;
 }
+footer {
+  border-top: none;
+}
+hr {
+  box-shadow: 0 0 10px #969386;
+  color: #a6a195;
+}
 .media_thumbnail {
   width:inherit;
   background: url("/theme_static/images/noise.png") repeat fixed 0 0 rgba(166, 161, 149, 0.05);
@@ -477,6 +482,6 @@ table.admin_panel th, table.admin_side_panel th {
   .thumb_gallery .column, .thumb_gallery .columns {
     margin-left:12px;
     margin-right:12px;
-  }  
+  }
 }
 /* end browser width stuff */
