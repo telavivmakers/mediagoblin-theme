@@ -61,6 +61,7 @@
     {% include 'mediagoblin/bits/navbar.html' %}
     {% include 'mediagoblin/bits/body_start.html' %}
     {% block mediagoblin_body %}
+    <div id="wrap">
       <div class="container">
         {% include 'mediagoblin/bits/above_content.html' %}
         <div class="mediagoblin_content">
@@ -71,8 +72,11 @@
             {% template_hook("persona_form") %}
           {% endif %}
         </div>
-        {%- include "mediagoblin/bits/base_footer.html" %}
       </div>
+    </div>
+    <div class="container">
+        {%- include "mediagoblin/bits/base_footer.html" %}
+    </div>
     {%- endblock mediagoblin_body %}
     {% include 'mediagoblin/bits/body_end.html' %}
     <i id="scrolltop" title="back to top" onclick="scrollToTop(&quot;top&quot;)" class="fa fa-arrow-circle-o-up fa-3x"></i>
