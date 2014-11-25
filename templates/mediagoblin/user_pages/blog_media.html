@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -30,21 +30,19 @@
   <script type="text/javascript"
           src="{{ request.staticdirect('/js/keyboard_navigation.js') }}"></script>
 
-  {% template_hook("media_head") %}
+{% template_hook("media_head") %}
 {% endblock mediagoblin_head %}
 
 {% block mediagoblin_content %}
-  <div class="row foot">
-    <p class="context">
-      {%- trans user_url=request.urlgen(
+  <p class="context">
+    {%- trans user_url=request.urlgen(
               'mediagoblin.user_pages.user_home',
               user=media.get_uploader.username),
               username=media.get_uploader.username -%}
-      <i class="fa fa-asterisk"></i> Blog post by <a href="{{user_url}}">{{username}}</a>
-      {%- endtrans -%}
-    </p>
-    {% include "mediagoblin/utils/prev_next.html" %}
-  </div>
+    <i class="fa fa-asterisk"></i> Blog post by <a href="{{user_url}}">{{username}}</a>
+    {%- endtrans -%}
+  </p>
+  {% include "mediagoblin/utils/prev_next.html" %}
   <div class="media_pane">
     <div class="media_image_container">
       {% block mediagoblin_media %}
@@ -72,16 +70,15 @@
         {% if request.user and
           (media.uploader == request.user.id or
            request.user.has_privilege('admin')) %}
-      {% set edit_url = request.urlgen('mediagoblin.media_types.blog.blogpost.edit', 
-                                 blog_slug=media.media_manager.get_blog_by_blogpost().slug, 
+      {% set edit_url = request.urlgen('mediagoblin.media_types.blog.blogpost.edit',
+                                 blog_slug=media.media_manager.get_blog_by_blogpost().slug,
                                  user=request.user.username, blog_post_slug=media.slug) %}
-      <div class="row">
-        <a class="button" href="{{ edit_url }}">{% trans %}<i class="fa fa-edit"></i> Edit{% endtrans %}</a>
+      <a class="button_action" href="{{ edit_url }}">{% trans %}Edit{% endtrans %}</a>
       {% set delete_url = request.urlgen('mediagoblin.user_pages.media_confirm_delete',
                                  user= media.get_uploader.username,
                                  media_id=media.id) %}
-        <a class="button" href="{{ delete_url }}">{% trans %}<i class="fa fa-trash-o"></i> Delete{% endtrans %}</a>
-      </div>
+      <a class="button_action" href="{{ delete_url }}">{% trans %}Delete{% endtrans %}</a>
+
     {% endif %}
     </br>
     </br>
@@ -91,7 +88,7 @@
           {% if not request.user %}
             href="{{ request.urlgen('mediagoblin.auth.login') }}"
           {% endif %}
-          class="button" id="button_addcomment" title="Add a comment">
+          class="button_action" id="button_addcomment" title="Add a comment">
           {% trans %}Add a comment{% endtrans %}
         </a>
         {% include "mediagoblin/utils/comment-subscription.html" %}
@@ -103,7 +100,7 @@
                                          media_id=media.id) }}" method="POST" id="form_comment">
           {{ wtforms_util.render_divs(comment_form) }}
           <div class="form_submit_buttons">
-            <input type="submit" value="{% trans %}Add this comment{% endtrans %}" class="button" />
+            <input type="submit" value="{% trans %}Add this comment{% endtrans %}" class="button_action" />
               {{ csrf_token }}
           </div>
         </form>
@@ -151,7 +148,7 @@
   <div class="media_sidebar">
     <h3>{% trans %}Added{% endtrans %}</h3>
     <p><span title="{{ media.created.strftime("%I:%M%p %Y-%m-%d") }}">
-        {%- trans formatted_time=timesince(media.created) -%}    
+        {%- trans formatted_time=timesince(media.created) -%}
           {{ formatted_time }} ago
         {%- endtrans -%}
     </span></p>
