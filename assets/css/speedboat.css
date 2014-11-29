@@ -1,8 +1,18 @@
-html, body {
-  padding-top: 1.5em;
+html {
   background:url("/theme_static/images/noise.png") repeat scroll 0 0px, linear-gradient(to right, rgba(166, 161, 149, 0.9), rgba(166, 161, 149, 0.3) 8%, rgba(166, 161, 149, 0) 15%, rgba(166, 161, 149, 0) 85%, rgba(166, 161, 149, 0.3) 92%, rgba(166, 161, 149, 0.9) 100%) repeat scroll 0 0 #FDF6E3;
+  position:relative;
+  min-height:100%;
   color: #586e75;
   font-size:1.1em;
+  height:auto;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  padding-top: 3em;
+  margin-bottom:35px;
+  background-color:transparent;
+  font-family: "Ubuntu", sans-serif;
+  color: #586e75;
 }
 h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", sans-serif;
@@ -298,12 +308,11 @@ header {
   max-width:inherit;
   width:inherit;
 }
-#wrap {
-/*  min-height:0;*/
-/*  max-height:100%;*/
-}
 footer {
   border-top: none;
+  position: absolute;
+  bottom: 0;
+  height:35px;
 }
 hr {
   box-shadow: 0 0 10px #969386;

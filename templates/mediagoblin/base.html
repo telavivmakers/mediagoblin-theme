@@ -61,7 +61,6 @@
     {% include 'mediagoblin/bits/navbar.html' %}
     {% include 'mediagoblin/bits/body_start.html' %}
     {% block mediagoblin_body %}
-    <div id="wrap">
       <div class="container">
         {% include 'mediagoblin/bits/above_content.html' %}
         <div class="mediagoblin_content">
@@ -73,7 +72,6 @@
           {% endif %}
         </div>
       </div>
-    </div>
         {%- include "mediagoblin/bits/base_footer.html" %}
     {%- endblock mediagoblin_body %}
     {% include 'mediagoblin/bits/body_end.html' %}
