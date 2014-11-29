@@ -130,7 +130,7 @@
   {% if not report.is_archived_report() and
         not (report.reported_user.has_privilege('admin') and
         not request.user.has_privilege('admin')) %}
-    <input type=button value="{% trans %}Resolve{% endtrans %}" id=open_resolution_form />
+    <input type=button class="button_action" value="{% trans %}Resolve{% endtrans %}" id=open_resolution_form />
     <form action="" method="POST" id=resolution_form>
       {{ wtforms_util.render_divs(form) }}
       {{ csrf_token }}
@@ -154,7 +154,7 @@
       <p>{{ report.result }}</p>
     </pre>
   {% else %}
-    <input type=button disabled=disabled value="{% trans %}Resolve This Report{% endtrans %}"/>
+    <input type=button class="button_action" disabled=disabled value="{% trans %}Resolve This Report{% endtrans %}"/>
     <p>
       {% trans -%}
         You cannot take action against an administrator
