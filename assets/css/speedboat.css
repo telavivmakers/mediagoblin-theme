@@ -233,6 +233,9 @@ input[type="password"], input[type="email"], input[type="url"], input[type="text
   box-shadow: 0 0 2px #A6A195 inset;
   width: 100%;
   font-family: "Ubuntu",sans-serif;
+  border-radius:6px;
+  border:1px solid #EEE8D5;
+  padding:0.2em;
 }
 .fa-dark {
   color: #586e75;
