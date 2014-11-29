@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -41,19 +41,20 @@
 
 
 {% block mediagoblin_content -%}
+  <div class="six columns">
   <h1>
     {%- trans username=user.username %}{{ username }}'s profile{% endtrans -%}
   </h1>
 
-  {% if not user.url and not user.bio %}
+  {% if not user.url and not user.bio and not user.location %}
     {% if request.user and (request.user.id == user.id) %}
       <div class="profile_sidebar empty_space">
         <p>
           {% trans %}Here's a spot to tell others about yourself.{% endtrans %}
         </p>
         <a href="{{ request.urlgen('mediagoblin.edit.profile',
-                 user=user.username) }}" class="button">
-          {%- trans %}Edit profile{% endtrans -%}
+                 user=user.username) }}" class="button_action">
+          <i class="fa fa-edit"></i> {%- trans %}Edit profile{% endtrans -%}
         </a>
     {% else %}
       <div class="profile_sidebar empty_space">
@@ -70,20 +71,20 @@
             (request.user.id == user.id or request.user.has_privilege('admin')) %}
         <a href="{{ request.urlgen('mediagoblin.edit.profile',
                  user=user.username) }}">
-          {%- trans %}Edit profile{% endtrans -%}
+          <i class="fa fa-edit"></i> {%- trans %}Edit profile{% endtrans -%}
         </a>
       {% endif %}
   {% endif %}
     <p>
       <a href="{{ request.urlgen('mediagoblin.user_pages.collection_list',
                                          user=user.username) }}">
-        {%- trans %}Browse collections{% endtrans -%}
+        <i class="fa fa-folder-open"></i>{%- trans %}Browse collections{% endtrans -%}
       </a>
     </p>
   </div>
-
+  </div>
   {% if media_entries.count() %}
-    <div class="profile_showcase">
+    <div class="ten columns profile_showcase">
       {{ object_gallery(request, media_entries, pagination,
                         pagination_base_url=user_gallery_url, col_number=3) }}
       {% include "mediagoblin/utils/object_gallery.html" %}
@@ -101,19 +102,19 @@
     </div>
   {% else %}
     {% if request.user and (request.user.id == user.id) %}
-      <div class="profile_showcase empty_space">
+      <div class="ten columns profile_showcase empty_space">
         <p>
           {% trans -%}
           This is where your media will appear, but you don't seem to have added anything yet.
           {%- endtrans %}
         </p>
-        <a class="button"
+        <a class="button_action"
            href="{{ request.urlgen('mediagoblin.submit.start') }}">
-          {%- trans %}Add media{% endtrans -%}
+          <i class="fa fa-picture-o"></i> {%- trans %}Add media{% endtrans -%}
         </a>
       </div>
     {% else %}
-      <div class="profile_showcase empty_space">
+      <div class="ten columns profile_showcase empty_space">
         <p>
           {% trans -%}
           There doesn't seem to be any media here yet...

@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -30,23 +30,23 @@
   <script type="text/javascript"
           src="{{ request.staticdirect('/js/keyboard_navigation.js') }}"></script>
 
-<!--  {% template_hook("location_head") %}-->
+  {% template_hook("location_head") %}
   {% template_hook("media_head") %}
 {% endblock mediagoblin_head %}
 {% block mediagoblin_content %}
-  <div class="row foot">
-    <p class="eleven columns context">
-      {%- trans user_url=request.urlgen(
+<div class="row foot">
+  <p class="eleven columns context">
+    {%- trans user_url=request.urlgen(
               'mediagoblin.user_pages.user_home',
               user=media.get_uploader.username),
               username=media.get_uploader.username -%}
-      <i class="fa fa-asterisk"></i> Browsing media by <a href="{{user_url}}">{{username}}</a>
-      {%- endtrans -%}
-    </p>
-    <div class="five columns">
-      {% include "mediagoblin/utils/prev_next.html" %}
-    </div>
+    <i class="fa fa-asterisk"></i> Browsing media by <a href="{{user_url}}">{{username}}</a>
+    {%- endtrans -%}
+  </p>
+  <div class="five columns">
+    {% include "mediagoblin/utils/prev_next.html" %}
   </div>
+</div>
   <div class="media_pane eleven columns">
     <div class="media_image_container">
       {% block mediagoblin_media %}
@@ -71,22 +71,22 @@
         {% endif %}
       {% endblock %}
     </div>
-    <div class="row head foot"
+    <div class="row head foot">
     <h2 class="media_title">
       {{ media.title }}
     </h2>
     {% if request.user and
           (media.uploader == request.user.id or
            request.user.has_privilege('admin')) %}
+    <div class="pull-right" style="padding-top:20px;">
       {% set edit_url = request.urlgen('mediagoblin.edit.edit_media',
                                  user= media.get_uploader.username,
                                  media_id=media.id) %}
-      <div class="row">
-        <a class="button" href="{{ edit_url }}">{% trans %}<i class="fa fa-edit"></i> Edit{% endtrans %}</a>
+      <a class="button_action" href="{{ edit_url }}"><i class="fa fa-edit"></i> {% trans %}Edit{% endtrans %}</a>
       {% set delete_url = request.urlgen('mediagoblin.user_pages.media_confirm_delete',
                                  user= media.get_uploader.username,
                                  media_id=media.id) %}
-        <a class="button" href="{{ delete_url }}">{% trans %}<i class="fa fa-trash-o"></i> Delete{% endtrans %}</a>
+      <a class="button_action button_warning" href="{{ delete_url }}"><i class="fa fa-trash-o"></i> {% trans %}Delete{% endtrans %}</a>
       </div>
     {% endif %}
     {% autoescape False %}
@@ -94,14 +94,15 @@
     {% endautoescape %}
     </div>
     {% if comments and request.user and request.user.has_privilege('commenter') %}
+    <div class="media_comments">
       {% if app_config['allow_comments'] %}
         <a
           {% if not request.user %}
           href="{{ request.urlgen('mediagoblin.auth.login') }}?next={{
                                                 request.base_url|urlencode }}"
           {% endif %}
-          class="button" id="button_addcomment" title="Add a comment">
-          {% trans %}Add a comment{% endtrans %}
+          class="button_action" id="button_addcomment" title="Add a comment">
+          {% trans %}<i class="fa fa-comment"></i> Add a comment{% endtrans %}
         </a>
         {% include "mediagoblin/utils/comment-subscription.html" %}
 
@@ -112,7 +113,7 @@
                                          media_id=media.id) }}" method="POST" id="form_comment">
           {{ wtforms_util.render_divs(comment_form) }}
           <div class="form_submit_buttons">
-            <input type="submit" value="{% trans %}Add this comment{% endtrans %}" class="button" />
+            <input type="submit" value="{% trans %}Add this comment{% endtrans %}" class="button_action" />
               {{ csrf_token }}
           </div>
           <input type="hidden" value="{{ request.urlgen('mediagoblin.user_pages.media_preview_comment') }}" id="previewURL" />
@@ -131,7 +132,7 @@
             class="comment_wrapper">
           {%- endif %}
           <div class="comment_author">
-            <i class="fa fa-comment"></i>
+            <img src="{{ request.staticdirect('/images/icon_comment.png') }}" />
             <a href="{{ request.urlgen('mediagoblin.user_pages.user_home',
                             user=comment_author.username) }}"
                class="comment_authorlink">
@@ -167,9 +168,15 @@
       </ul>
       {{ render_pagination(request, pagination,
                  media.url_for_self(request.urlgen)) }}
+    {% else %}
+      <div class="empty_space no_background">
     {% endif %}
   </div>
-  <div class="media_sidebar">
+
+    </div>
+
+
+  <div class="five columns media_sidebar">
     <h3>{% trans %}<i class="fa fa-calendar fa-fw"></i> Added{% endtrans %}</h3>
     <p><span title="{{ media.created.strftime("%I:%M%p %Y-%m-%d") }}">
         {%- trans formatted_time=timesince(media.created) -%}
@@ -222,11 +229,14 @@
       </p>
     {%- endif %}
 
-    {% template_hook("media_sideinfo") %}
-
     {% block mediagoblin_sidebar %}
     {% endblock %}
 
+    {%- set model = media %}
+    {% template_hook("location_info") %}
+    {% template_hook("media_sideinfo") %}
+
   </div>
+
   <div class="clear"></div>
 {% endblock %}

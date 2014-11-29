@@ -1,5 +1,5 @@
 html, body {
-  padding-top: 2em;
+  padding-top: 1.5em;
   background:url("/theme_static/images/noise.png") repeat scroll 0 0px, linear-gradient(to right, rgba(166, 161, 149, 0.9), rgba(166, 161, 149, 0.3) 8%, rgba(166, 161, 149, 0) 15%, rgba(166, 161, 149, 0) 85%, rgba(166, 161, 149, 0.3) 92%, rgba(166, 161, 149, 0.9) 100%) repeat scroll 0 0 #FDF6E3;
   color: #586e75;
   font-size:1.1em;
@@ -139,7 +139,7 @@ blockquote {
   text-decoration: none;
   color: #586e75;
 }
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+.button, button, input[type="submit"], input[type="reset"], input[type="button"], .button_action {
   background: #FDF6E3; /* Old browsers */
   background: #FDF6E3 -moz-linear-gradient(top, rgba(253,246,227,0.2) 0%, rgba(82,79,73,0.2) 100%); /* FF3.6+ */
   background: #FDF6E3 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,246,227,0.2)), color-stop(100%,rgba(82,79,73,0.2))); /* Chrome,Safari4+ */
@@ -149,7 +149,7 @@ blockquote {
   background: #FDF6E3 linear-gradient(top, rgba(253,246,227,0.2) 0%,rgba(82,79,73,0.2) 100%); /* W3C */
   font-family: "Ubuntu",sans-serif;
 }
-.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button_action:hover {
   background: #FDF6E3; /* Old browsers */
   background: #FDF6E3 -moz-linear-gradient(top, rgba(253,246,227,0.3) 0%, rgba(82,79,73,0.3) 100%); /* FF3.6+ */
   background: #FDF6E3 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,246,227,0.3)), color-stop(100%,rgba(82,79,73,0.3))); /* Chrome,Safari4+ */
@@ -159,7 +159,7 @@ blockquote {
   background: #FDF6E3 linear-gradient(top, rgba(253,246,227,0.3) 0%,rgba(82,79,73,0.3) 100%); /* W3C */
   font-family: "Ubuntu",sans-serif;
 }
-.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active, .button_action:active {
   background: #FDF6E3; /* Old browsers */
   background: #FDF6E3 -moz-linear-gradient(top, rgba(253,246,227,0.4) 0%, rgba(82,79,73,0.4) 100%); /* FF3.6+ */
   background: #FDF6E3 -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,246,227,0.4)), color-stop(100%,rgba(82,79,73,0.4))); /* Chrome,Safari4+ */
@@ -295,6 +295,10 @@ header {
   max-width:inherit;
   width:inherit;
 }
+#wrap {
+/*  min-height:0;*/
+/*  max-height:100%;*/
+}
 footer {
   border-top: none;
 }
@@ -367,14 +371,13 @@ thumb_entry_title {
 }
 .button_action, .button_action_highlight, .button_form {
   color: #4a4a4a;
-  background-color: transparent;
   border: 1px solid;
-  border-color: transparent;
+  border-color: #D9D3C3;
   border-width: 1px 1px 2px;
   padding: 5px 10px;
 }
 .navigation_button {
-  width: 125px;
+  width: 40%;
 }
 .comment_active {
   background: none repeat scroll 0 0 #969386;
@@ -464,6 +467,10 @@ table.admin_panel th, table.admin_side_panel th {
   .collapse {
     display:none;
   }
+  .navigation_button {
+    width: 42%;
+  }
+
 }
 @media only screen and (min-width: 960px) {
   .thumb_gallery .column, .thumb_gallery .columns {
@@ -472,15 +479,14 @@ table.admin_panel th, table.admin_side_panel th {
   }
 }
 @media screen and (max-width: 940px) {
-  .navigation_button {
-    width: 49%;
-    padding: 10px 0 14px;
-  }
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .thumb_gallery .column, .thumb_gallery .columns {
     margin-left:12px;
     margin-right:12px;
+  }
+  .navigation_button {
+    width: 39%;
   }
 }
 /* end browser width stuff */
