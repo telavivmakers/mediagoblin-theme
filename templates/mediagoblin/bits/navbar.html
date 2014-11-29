@@ -40,7 +40,7 @@
               {# the following link should only appear when verification is needed #}
                 <a href="{{ request.urlgen('mediagoblin.user_pages.user_home',
                                  user=request.user.username) }}"
-                   class="button">
+                   class="button_action">
                {% trans %}Verify your email!{% endtrans %}</a>
                or <a id="logout" href=
                {% if persona is not defined %}
