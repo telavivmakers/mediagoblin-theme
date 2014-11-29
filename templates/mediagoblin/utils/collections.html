@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -18,7 +18,7 @@
 
 {% block collections_content -%}
   {% if media.collections %}
-    <h3>{% trans %}<i class="fa fa-folder-open fa-fw"></i> Collected in{% endtrans %}</h3>
+    <h3><i class="fa fa-folder-open fa-fw"></i> {% trans %}Collected in{% endtrans %}</h3>
     <p>
       {%- for collection in media.collections %}
         {%- if not loop.first %}
@@ -37,7 +37,7 @@
                                   user=media.get_uploader.username,
                                   media_id=media.id) }}"
          class="button_action">
-        {% trans %}<i class="fa fa-folder-open"></i> Add to a collection{% endtrans %}
+        <i class="fa fa-folder-open"></i> {% trans %}Add to a collection{% endtrans %}
       </a>
     </p>
   {%- endif %}

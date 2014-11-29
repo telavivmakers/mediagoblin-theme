@@ -21,7 +21,7 @@
     and model.get_location.position
     and "latitude" in model.get_location.position
     and "longitude" in model.get_location.position %}
-    <h3>{% trans %}<i class="fa fa-location-arrow fa-fw"></i> Location{% endtrans %}</h3>
+    <h3><i class="fa fa-location-arrow fa-fw"></i> {% trans %}Location{% endtrans %}</h3>
     <div>
       {%- set lon = model.get_location.position.longitude %}
       {%- set lat = model.get_location.position.latitude %}

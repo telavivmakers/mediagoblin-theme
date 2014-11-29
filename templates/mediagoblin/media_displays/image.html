@@ -33,7 +33,7 @@
     {% set original_date = media.media_manager.get_original_date() %}
 
     {% if original_date %}
-      <h3>{% trans %}<i class="fa fa-calendar fa-fw"></i> Created{% endtrans %}</h3>
+      <h3><i class="fa fa-calendar fa-fw"></i> {% trans %}Created{% endtrans %}</h3>
 
       <p><span title="{{ original_date.strftime("%I:%M%p %Y-%m-%d") }}">
         {%- trans formatted_time=timesince(original_date) -%}

@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -52,7 +52,7 @@
         <p>{% trans %}In case it doesn't:{% endtrans %}</p>
   
         <a href="{{ request.urlgen('mediagoblin.auth.resend_verification') }}"
-           class="button">{% trans %}Resend verification email{% endtrans %}</a>
+           class="button_action button_action_highlight">{% trans %}Resend verification email{% endtrans %}</a>
       </div>
     {% else %}
       {# if the user is not you, but still needs to verify their email #}

@@ -1,6 +1,6 @@
 {#
 # GNU MediaGoblin -- federated, autonomous media hosting
-# Copyright (C) 2011, 2012 MediaGoblin contributors.  See AUTHORS.
+# Copyright (C) 2011-2014 MediaGoblin contributors.  See AUTHORS.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -21,13 +21,13 @@
         <a type="submit" href="{{ request.urlgen('mediagoblin.notifications.subscribe_comments',
             user=media.get_uploader.username,
             media=media.slug_or_id)}}"
-            class="button_action">{% trans %}<i class="fa fa-check"></i> Subscribe to comments{% endtrans %}
+            class="button_action"><i class="fa fa-check"></i> {% trans %}Subscribe to comments{% endtrans %}
         </a>
     {% else %}
         <a type="submit" href="{{ request.urlgen('mediagoblin.notifications.silence_comments',
             user=media.get_uploader.username,
             media=media.slug_or_id)}}"
-            class="button_action">{% trans %}<i class="fa fa-ban"></i> Silence comments{% endtrans %}
+            class="button_action"><i class="fa fa-ban"></i> {% trans %}Silence comments{% endtrans %}
         </a>
     {% endif %}
 {%- endif %}

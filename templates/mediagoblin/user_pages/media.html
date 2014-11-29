@@ -102,7 +102,7 @@
                                                 request.base_url|urlencode }}"
           {% endif %}
           class="button_action" id="button_addcomment" title="Add a comment">
-          {% trans %}<i class="fa fa-comment"></i> Add a comment{% endtrans %}
+          <i class="fa fa-comment"></i> {% trans %}Add a comment{% endtrans %}
         </a>
         {% include "mediagoblin/utils/comment-subscription.html" %}
 
@@ -177,7 +177,7 @@
 
 
   <div class="five columns media_sidebar">
-    <h3>{% trans %}<i class="fa fa-calendar fa-fw"></i> Added{% endtrans %}</h3>
+    <h3><i class="fa fa-calendar fa-fw"></i> {% trans %}Added{% endtrans %}</h3>
     <p><span title="{{ media.created.strftime("%I:%M%p %Y-%m-%d") }}">
         {%- trans formatted_time=timesince(media.created) -%}
           {{ formatted_time }} ago
@@ -202,7 +202,7 @@
     {% include "mediagoblin/utils/exif.html" %}
 
     {%- if media.attachment_files|count %}
-      <h3>{% trans %}<i class="fa fa-paperclip fa-fw"></i> Attachments{% endtrans %}</h3>
+      <h3><i class="fa fa-paperclip fa-fw"></i> {% trans %}Attachments{% endtrans %}</h3>
       <ul>
         {%- for attachment in media.attachment_files %}
           <li>
@@ -218,7 +218,7 @@
           and (media.uploader == request.user.id
                or request.user.has_privilege('admin')) %}
       {%- if not media.attachment_files|count %}
-        <h3>{% trans %}<i class="fa fa-paperclip fa-fw"></i> Attachments{% endtrans %}</h3>
+        <h3><i class="fa fa-paperclip fa-fw"></i> {% trans %}Attachments{% endtrans %}</h3>
       {%- endif %}
       <p>
         <a href="{{ request.urlgen('mediagoblin.edit.attachments',
