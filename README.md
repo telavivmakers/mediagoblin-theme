@@ -1,7 +1,7 @@
 Sandy Seventies Speedboat MediaGoblin Theme
 ===========================================
 
-[![screenshot](https://media.jpope.org/mgoblin_media/media_entries/503/snapshot137.medium.png)](https://media.jpope.org/u/jpope/m/mediagoblin-theme-sandy-seventies-speedboat/)
+[![screenshot](https://media.jpope.org/mgoblin_media/media_entries/557/Screenshot_-_11302014_-_023001_PM.medium.png)](https://media.jpope.org/u/jpope/m/mediagoblin-theme-sandy-seventies-speedboat-3b67/)
 
 This theme is included with the current [MediaGoblin](http://mediagoblin.org) release.
 
