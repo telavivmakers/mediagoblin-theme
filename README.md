@@ -20,6 +20,7 @@ and run to link the theme assets
 
 and restart your instance.
 
+[![screenshot2](https://media.jpope.org/mgoblin_media/media_entries/558/Screenshot_-_11302014_-_023625_PM.medium.png)](https://media.jpope.org/u/jpope/m/mediagoblin-theme-sandy-seventies-speedboat-da26/)
 ####About this theme
 
 This theme uses a few bits of [Skeleton](http://www.getskeleton.com) and the [Font Awesome](http://fontawesome.io) icon font.
