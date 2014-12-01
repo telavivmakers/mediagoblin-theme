@@ -103,11 +103,7 @@
   <div id="report-{{ report.id }}"
        class="report_wrapper">
     <div class="report_author">
-        <img src="{{ request.staticdirect(
-                  '/images/icon_clipboard_alert.png') }}"
-             alt=""
-             title="Under a GNU LGPL v.3 or Creative Commons BY-SA 3.0 license.
-                  Distributed by the GNOME project http://www.gnome.org" />
+        <i class="fa fa-exclamation-circle"></i> 
         <a href="{{ request.urlgen('mediagoblin.moderation.users_detail',
                         user=report.reporter.username) }}"
            class="report_authorlink">

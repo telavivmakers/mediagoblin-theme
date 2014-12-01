@@ -432,6 +432,9 @@ a.thumb_entry_title {
   font-size: 0.6667rem;
   line-height:1em;
 }
+a.report_authorlink, a.report_whenlink {
+  color: #dc322f;
+}
 thumb_entry_title {
   position: absolute;
   background: black;
