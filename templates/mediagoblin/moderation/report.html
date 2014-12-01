@@ -103,7 +103,7 @@
   <div id="report-{{ report.id }}"
        class="report_wrapper">
     <div class="report_author">
-        <i class="fa fa-exclamation-circle"></i> 
+        <i class="fa fa-exclamation-circle"></i>
         <a href="{{ request.urlgen('mediagoblin.moderation.users_detail',
                         user=report.reporter.username) }}"
            class="report_authorlink">
@@ -130,7 +130,7 @@
     <form action="" method="POST" id=resolution_form>
       {{ wtforms_util.render_divs(form) }}
       {{ csrf_token }}
-      <input type=submit id="submit_this_report" value="{% trans %}Resolve This Report{% endtrans %}"/>
+      <input type=submit class="button_action_highlight" id="submit_this_report" value="{% trans %}Resolve This Report{% endtrans %}"/>
     </form>
   <script>
   $(document).ready(function() {
