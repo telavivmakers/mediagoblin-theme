@@ -19,10 +19,11 @@
   {% if request.user %}
   <h1>{% trans %}Explore{% endtrans %}</h1>
   {% else %}
-  <div class="row foot">
+  <a href="#" id="want-in">Want in?</a>
+  <div class="row foot" style="display:none" id="in-you-got">
     <a href="http://mediagoblin.org"><img class="blogcover" src="{{ request.staticdirect('/images/mediagoblin_header.png', 'theme') }}" alt="cover image"></a>
     <div class="ten columns frontpage_message">
-      <h1>{% trans %}Hi there, welcome to this MediaGoblin site!{% endtrans %}</h1>
+      <h1>{% trans %}welcome to the TAMI media site!{% endtrans %}</h1>
       <p>{% trans %}This site is running <a href="http://mediagoblin.org">MediaGoblin</a>, an extraordinarily great piece of media hosting software.{% endtrans %}</p>
       {% if auth %}
       <p>{% trans %}To add your own media, place comments, and more, you can log in with your MediaGoblin account.{% endtrans %}</p>
@@ -49,4 +50,14 @@
     </div>
   </div>
   <div class="clear"></div>
+    <script type="text/javascript">
+        var get = document.querySelector.bind(document),
+            wantin = get('#want-in'),
+            inyougo = get('#in-you-go');
+
+        wantin.onclick = function() {
+            wantin.style.display = 'none';
+            inyougo.style.display = null;
+        }
+    </script>
   {% endif %}
