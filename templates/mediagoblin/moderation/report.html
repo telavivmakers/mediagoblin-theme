@@ -50,7 +50,7 @@
         <a href="{{ request.urlgen(
                         'mediagoblin.user_pages.media_home.view_comment',
                         comment=comment.id,
-                        user=comment.get_media_entry.get_uploader.username,
+                        user=comment.get_media_entry.get_actor.username,
                         media=comment.get_media_entry.slug_or_id) }}#comment"
            class="comment_whenlink">
           <span title='{{- comment.created.strftime("%I:%M%p %Y-%m-%d") -}}'>
@@ -70,11 +70,11 @@
     {% set media_entry = report.media_entry %}
     <div class="three columns media_thumbnail">
       <a href="{{ request.urlgen('mediagoblin.user_pages.media_home',
-                            user=media_entry.get_uploader.username,
+                            user=media_entry.get_actor.username,
                             media=media_entry.slug_or_id) }}">
       <img src="{{ media_entry.thumb_url}}"/></a>
       <a href="{{ request.urlgen('mediagoblin.user_pages.media_home',
-                    user=media_entry.get_uploader.username,
+                    user=media_entry.get_actor.username,
                     media=media_entry.slug_or_id) }}" class=thumb_entry_title>
         {{ media_entry.title }}</a>
     </div>

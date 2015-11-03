@@ -29,7 +29,7 @@
         {%- set comment_url = request.urlgen(
                             'mediagoblin.user_pages.media_home.view_comment',
                             comment=comment.id,
-                            user=media.get_uploader.username,
+                            user=media.get_actor.username,
                             media=media.slug_or_id) %}
         <div id="comment-{{ comment.id }}"
             class="comment_wrapper">
@@ -59,17 +59,17 @@
         <h3>{% trans %}Reporting this Media Entry{% endtrans %}</h3>
           <div class="media_thumbnail">
             <a href="{{ request.urlgen('mediagoblin.user_pages.media_home',
-                            user=media.get_uploader.username,
+                            user=media.get_actor.username,
                             media=media.slug_or_id) }}">
               <img src="{{ media.thumb_url }}"/></a>
             <a href="{{ request.urlgen('mediagoblin.user_pages.media_home',
-                            user=media.get_uploader.username,
+                            user=media.get_actor.username,
                             media=media.slug_or_id) }}"
                class=thumb_entry_title>{{ media.title }}</a>
           </div>
           <div class=clear></div>
-      {%- trans user_url = request.urlgen('mediagoblin.user_pages.user_home', user=media.get_uploader.username),
-            username = media.get_uploader.username %}
+      {%- trans user_url = request.urlgen('mediagoblin.user_pages.user_home', user=media.get_actor.username),
+            username = media.get_actor.username %}
             <i class="fa fa-asterisk"></i> Published by <a href="{{ user_url }}"
                           class="comment_authorlink">{{ username }}</a>
       {% endtrans %}
